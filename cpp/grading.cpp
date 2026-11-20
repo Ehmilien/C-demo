@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
+#include "time.cpp"
 
 string get_us_grade(int score) {
 
@@ -26,17 +27,17 @@ string get_us_grade(int score) {
 void us_grading() {
 
     int score;
-    cout << "Enter your score : ";
+    cout << get_time_prefix(true) << "Enter your score : ";
     cin >> score;
 
     if(score < 0 || score > 100) {
-        cout << "Your score has to be between 0 and 100 !";
+        cout << get_time_prefix(true) << "Your score has to be between 0 and 100 !";
         return;
     }
 
     string grade = get_us_grade(score);
 
-    cout << "Your score is : " << score << " and your grade is " << grade << "." << endl;
+    cout << get_time_prefix(true) << "Your score is : " << score << " and your grade is " << grade << "." << endl;
 
     return;
 }
@@ -59,15 +60,15 @@ int grade_cli(string course) {
     int score;
     do {
 
-        cout << "[" << course << "] Enter your score : ";
+        cout << get_time_prefix(true) << "[" << course << "] Enter your score : ";
         cin >> score;
 
         if(score < 0 || score > 20) {
-            cout << "[" << course << "] The score need to be between 0 and 20" << endl;
+            cout << get_time_prefix(true) << "[" << course << "] The score need to be between 0 and 20" << endl;
             return 0;
         }
 
-        cout << "[" << course << "] You entered : " << score << endl;
+        cout << get_time_prefix(true) << "[" << course << "] You entered : " << score << endl;
         done = true;
 
         return score;
@@ -88,7 +89,7 @@ void eu_grading() {
     grade.geography = grade_cli("Geography");
     grade.history = grade_cli("History");
 
-    cout << "Results : " << endl;
+    cout << get_time_prefix(true) << "Results : " << endl;
     cout << "- Physical Education : " << grade.physical_education << endl;
     cout << "- Math : " << grade.math << endl;
     cout << "- English : " << grade.english << endl;
@@ -104,7 +105,7 @@ void eu_grading() {
         + grade.science
         + grade.geography
         + grade.history) / 7;
-    cout << "Average : " << average << endl;
+    cout << get_time_prefix(true) << "Average : " << average << endl;
 
 }
 
