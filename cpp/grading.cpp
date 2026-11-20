@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-string getScore(int score) {
+string get_us_grade(int score) {
 
     if(score >= 0 && score <= 59)
         return "F";
@@ -22,7 +22,7 @@ string getScore(int score) {
     return NULL;
 };
 
-int main() {
+int us_grading() {
 
     int score;
     cout << "Enter your score : ";
@@ -33,9 +33,16 @@ int main() {
         return 1;
     }
 
-    string grade = getScore(score);
+    string grade = get_us_grade(score);
 
     cout << "Your score is : " << score << " and your grade is " << grade << "." << endl;
+
+    return 0;
+}
+
+int main() {
+
+    us_grading();
 
     return 0;
 }
