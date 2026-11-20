@@ -22,7 +22,7 @@ string get_us_grade(int score) {
     return NULL;
 };
 
-int us_grading() {
+void us_grading() {
 
     int score;
     cout << "Enter your score : ";
@@ -30,14 +30,14 @@ int us_grading() {
 
     if(score < 0 || score > 100) {
         cout << "Your score has to be between 0 and 100 !";
-        return 1;
+        return;
     }
 
     string grade = get_us_grade(score);
 
     cout << "Your score is : " << score << " and your grade is " << grade << "." << endl;
 
-    return 0;
+    return;
 }
 
 int main() {
