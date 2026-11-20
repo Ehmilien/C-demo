@@ -95,19 +95,49 @@ int tutorial_standard_output_and_input() {
 
 int tutorial_stringstream() {
 
+    string mystr;
+    float price = 0;
+    int quantity = 0;
+
+    cout << "Enter price : ";
+    getline (cin, mystr);
+    stringstream(mystr) >> price;
+
+    cout << "Enter quantity : ";
+    getline (cin, mystr);
+    stringstream(mystr) >> quantity;
+    cout << "Total price : " << price*quantity << endl;
+
+    return 0;
+}
+
+int tutorial_loop() {
+
+    string str;
+    do {
+
+        cout << "Enter text : ";
+        getline(cin, str);
+
+        cout << "You entered : " << str << NEWLINE;
+    } while (str != "goodbye");
+
     return 0;
 }
 
 int main() {
 
-    tutorial_structure();
-    tutorial_variable();
-    tutorial_variable_initialization();
-    tutorial_string();
-    tutorial_constant_expressions_and_preprocessor_definition();
-    tutorial_standard_output_and_input();
+    /* Every comment in main() is something that I already tested. */
 
-    tutorial_stringstream();
+    // tutorial_structure();
+    // tutorial_variable();
+    // tutorial_variable_initialization();
+    // tutorial_string();
+    // tutorial_constant_expressions_and_preprocessor_definition();
+    // tutorial_standard_output_and_input();
+    // tutorial_stringstream();
+
+    tutorial_loop();
 
     return 0;
 }
