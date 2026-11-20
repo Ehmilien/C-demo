@@ -28,6 +28,11 @@ int calculate(int a, int b, int operation) {
 void cli() {
 
     string line;
+    int a = 50;
+    int b = 30;
+
+    cout << "=======================================\n\nWelcome !\n\nUse 'closecli' to close the CLI (Obviously !)\n\n=======================================" << endl;
+
     do {
 
         cout << "> ";
@@ -39,7 +44,19 @@ void cli() {
         }
 
         if(line.rfind("+", 0) == 0)
-            cout << "Result : " << calculate(10, 50, 0) << endl;
+            cout << "Result : " << calculate(a, b, 0) << endl;
+
+        if(line.rfind("-", 0) == 0)
+            cout << "Result : " << calculate(a, b, 1) << endl;
+
+        if(line.rfind("*", 0) == 0)
+            cout << "Result : " << calculate(a, b, 2) << endl;
+
+        if(line.rfind("/", 0) == 0)
+            cout << "Result : " << calculate(a, b, 3) << endl;
+
+        if(line.rfind("%", 0) == 0)
+            cout << "Result : " << calculate(a, b, 4) << endl;
 
         cout << "> " << line << endl;
     } while(line != "closecli");
