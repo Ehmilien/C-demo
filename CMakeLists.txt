@@ -5,5 +5,5 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(C_demo
         calculator.c
-        http.c
-        main.c)
+        main.c
+        main.cpp)
