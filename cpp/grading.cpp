@@ -63,15 +63,14 @@ int grade_cli(string course) {
         cout << get_time_prefix(true) << "[" << course << "] Enter your score : ";
         cin >> score;
 
-        if(score < 0 || score > 20) {
-            cout << get_time_prefix(true) << "[" << course << "] The score need to be between 0 and 20" << endl;
-            return 0;
+        done = true;
+        if(!(score < 0 || score > 20)) {
+            cout << get_time_prefix(true) << "[" << course << "] You entered : " << score << endl;
+            return score;
         }
 
-        cout << get_time_prefix(true) << "[" << course << "] You entered : " << score << endl;
-        done = true;
-
-        return score;
+        cout << get_time_prefix(true) << "[" << course << "] The score need to be between 0 and 20. Please enter a valid score." << endl;
+        return grade_cli(course);
     } while (!done);
 
     return 0;
