@@ -50,10 +50,7 @@ namespace uuid::v4
             return uuid;
         }
 
-<<<<<<< HEAD
     // Made public because it would not compile.
-=======
->>>>>>> b6e5fc0284db97ab2b7c71a5c42f0ea92190a45d
     public:
         UUID() {}
 
