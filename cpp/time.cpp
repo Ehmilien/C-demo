@@ -10,7 +10,7 @@ string get_time() {
     time(&rawtime);
     timeinfo = localtime(&rawtime);
 
-    string str =  asctime(timeinfo);
+    string str = asctime(timeinfo);
     str.pop_back();
 
     return str;
